@@ -32,10 +32,9 @@
 
 // === Stili custom delle sezioni (header sticky, hero, servizi, contatti, footer) ===
 body {
-    transition: background-color 200ms ease;
-    color: 200ms ease;
+  transition: background-color 200ms ease;
+  color: 200ms ease;
 }
-
 
 header {
   position: sticky;
@@ -86,6 +85,7 @@ section {
 /* Sezione lavori*/
 .work-card {
   height: 100%;
+  cursor: pointer;
 }
 
 .work-card-img {
@@ -111,7 +111,6 @@ section {
   background-color: v.$brand-primary;
   color: hsl(40, 30%, 90%);
 }
-
 
 /* dark theme */
 body.tema-scuro {
@@ -159,4 +158,30 @@ body.tema-scuro .btn-outline-primary.active {
   background-color: hsl(40, 30%, 90%);
   color: hsl(20, 15%, 10%);
   border-color: hsl(40, 30%, 90%);
+}
+body.tema-scuro .modal-content {
+  background-color: hsl(20, 12%, 16%);
+  color: hsl(40, 30%, 92%);
+  border: 1px solid hsl(20, 10%, 30%);
+}
+
+body.tema-scuro .modal-header,
+body.tema-scuro .modal-footer {
+  border-color: hsl(20, 10%, 30%);
+}
+
+body.tema-scuro .modal-title {
+  color: hsl(40, 35%, 95%);
+}
+
+body.tema-scuro #modale-lavoro-descrizione {
+  color: hsl(40, 20%, 78%) !important;
+}
+
+body.tema-scuro .modal-body p {
+  color: hsl(40, 20%, 78%);
+}
+
+body.tema-scuro .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
 }

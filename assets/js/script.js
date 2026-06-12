@@ -2,7 +2,8 @@ const lavori = [
   {
     id: 1,
     nome: "Rinascita di un rustico moderno",
-    descrizione: "Progettazione ex-novo di una villa unifamiliare contemporanea su due livelli.",
+    descrizione:
+      "Progettazione ex-novo di una villa unifamiliare contemporanea su due livelli.",
     immagine: "/assets/img/villapiscina.jpg",
     alt: "villa con piscina",
     categoria: "residenziale",
@@ -10,7 +11,8 @@ const lavori = [
   {
     id: 2,
     nome: "Ristrutturazioni",
-    descrizione: "Riqualificazione di spazi esistenti, gestione dei lavori e coordinamento con le imprese.",
+    descrizione:
+      "Riqualificazione di spazi esistenti, gestione dei lavori e coordinamento con le imprese.",
     immagine: "/assets/img/ristrutturazione.jpg",
     alt: "ristrutturazione di un appartamento",
     categoria: "ristrutturazioni",
@@ -54,6 +56,14 @@ const filtriLavori = document.getElementById("filtri-lavori");
 const contatoreLavori = document.getElementById("contatore-lavori");
 const totaleLavori = document.getElementById("totale-lavori");
 
+const modaleLavoroElemento = document.getElementById("modale-lavoro");
+const modaleLavoroTitolo = document.getElementById("modale-lavoro-titolo");
+const modaleLavoroImg = document.getElementById("modale-lavoro-img");
+const modaleLavoroDescrizione = document.getElementById(
+  "modale-lavoro-descrizione",
+);
+const modaleLavoro = new bootstrap.Modal(modaleLavoroElemento);
+
 function aggiungiTesto(elemento, testo) {
   const nodoTesto = document.createTextNode(testo);
   elemento.append(nodoTesto);
@@ -72,7 +82,16 @@ function creaElemento(tag, classi = []) {
 function creaCardLavoro(lavoro) {
   const col = creaElemento("div", ["col-12", "col-md-4"]);
 
-  const card = creaElemento("div", ["card", "work-card", "h-100", "text-center"]);
+  const card = creaElemento("div", [
+    "card",
+    "work-card",
+    "h-100",
+    "text-center",
+  ]);
+  card.dataset.lavoroId = lavoro.id;
+  card.setAttribute("role", "button");
+  card.setAttribute("tabindex", "0");
+  card.setAttribute("aria-label", `Apri dettagli lavoro: ${lavoro.nome}`);
 
   const immagine = creaElemento("img", ["card-img-top", "work-card-img"]);
   immagine.setAttribute("src", lavoro.immagine);
@@ -141,8 +160,6 @@ filtriLavori.addEventListener("click", function (evento) {
   renderLavori(lavoriFiltrati);
 });
 
-
-
 const bottoneTema = document.getElementById("toggle-tema");
 
 function aggiornaTestoTema(temaScuroAttivo) {
@@ -161,6 +178,64 @@ bottoneTema.addEventListener("click", function () {
   aggiornaTestoTema(temaScuroAttivo);
 });
 
+function aggiornaTestoElemento(elemento, testo) {
+  elemento.replaceChildren(document.createTextNode(testo));
+}
 
+function apriModaleLavoro(lavoro) {
+  aggiornaTestoElemento(modaleLavoroTitolo, lavoro.nome);
+  aggiornaTestoElemento(modaleLavoroDescrizione, lavoro.descrizione);
+
+  modaleLavoroImg.setAttribute("src", lavoro.immagine);
+  modaleLavoroImg.setAttribute("alt", lavoro.alt);
+
+  modaleLavoro.show();
+}
+
+function trovaLavoroDaCard(card) {
+  const lavoroId = Number(card.dataset.lavoroId);
+
+  return lavori.find(function (lavoro) {
+    return lavoro.id === lavoroId;
+  });
+}
+
+contenitoreLavori.addEventListener("click", function (evento) {
+  const card = evento.target.closest(".work-card");
+
+  if (!card) {
+    return;
+  }
+
+  const lavoro = trovaLavoroDaCard(card);
+
+  if (!lavoro) {
+    return;
+  }
+
+  apriModaleLavoro(lavoro);
+});
+
+contenitoreLavori.addEventListener("keydown", function (evento) {
+  if (evento.key !== "Enter" && evento.key !== " ") {
+    return;
+  }
+
+  const card = evento.target.closest(".work-card");
+
+  if (!card) {
+    return;
+  }
+
+  evento.preventDefault();
+
+  const lavoro = trovaLavoroDaCard(card);
+
+  if (!lavoro) {
+    return;
+  }
+
+  apriModaleLavoro(lavoro);
+});
 
 renderLavori(lavori);
