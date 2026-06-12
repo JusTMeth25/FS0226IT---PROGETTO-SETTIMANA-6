@@ -1,58 +1,137 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier — Studio di architettura</title>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-  </head>
-  <body>
 
-    <header>
-      <!-- Navbar Bootstrap (navbar-expand-md, sticky in cima) -->
-        <nav class="navbar navbar-expand-md bg-primary navbar-dark">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Atelier</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav-menu"><span
-          class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="nav-menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Studio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Servizi</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contatti</a></li>
-          <button id="toggle-tema" type="button" class="btn btn-outline-light ms-md-2 mt-2 mt-md-0">Tema scuro</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Studio di architettura</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <!-- Navbar Bootstrap (navbar-expand-md, sticky in cima) -->
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Atelier</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav-menu"><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="nav-menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Studio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Servizi</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contatti</a></li>
+            <button id="toggle-tema" type="button" class="btn btn-outline-light ms-md-2 mt-2 mt-md-0">Tema
+              scuro</button>
+        </div>
       </div>
-    </div>
-  </nav>
-    </header>
+    </nav>
+  </header>
 
-    <section id="studio" class="min-height-80vh d-flex align-items-center">
-      <!-- Hero: titolo grande, sottotitolo, CTA. Sfondo brand. min-height 80vh -->
+  <section id="studio" class="min-height-80vh d-flex align-items-center">
+    <!-- Hero: titolo grande, sottotitolo, CTA. Sfondo brand. min-height 80vh -->
     <div class="container">
       <div class="row">
         <div class="col-12 d-flex align-items-center justify-content-center flex-column text-center mt-5">
           <h1 class="fw-bold mb-2 hero-h1">Architettura per spazi che parlano</h1>
-          <p class="lead">Progettiamo case, uffici e spazi commerciali con attenzione alla luce, ai materiali e al contesto.</p>
+          <p class="lead">Progettiamo case, uffici e spazi commerciali con attenzione alla luce, ai materiali e al
+            contesto.</p>
           <a href="#contatti" class="btn btn-primary">Inizia un progetto</a>
-       </div>
-       </div>
-    </section>
+        </div>
+      </div>
+  </section>
 
-    <section id="servizi">
-      <!-- 3 card servizi affiancate da md in su -->
-    </section>
+  <section id="servizi">
+    <!-- 3 card servizi affiancate da md in su -->
+    <div class="services-title d-flex align-items-center justify-content-center flex-column text-center mt-5 mb-5">
+      <h3 class="fw-bold">I nostri servizi</h3>
+      <p class="text-muted">Tre aree di lavoro, una sola attenzione alla qualità.</p>
+    </div>
+    <div class="container">
+      <div class="row g-4 justify-content-center mb-3">
 
-    <section id="contatti">
-      <!-- Form contatti Bootstrap, larghezza limitata e centrata -->
-    </section>
+        <div class="col-12 col-md-4">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="card-icon mb-3">🏠</div>
+              <h5 class="card-title fw-bold">Progettazione residenziale</h5>
+              <p class="card-text text-muted">
+                Case private, ville e ristrutturazioni domestiche, dal sopralluogo alla consegna delle chiavi.
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <footer>
-      <!-- 3 colonne: Atelier+indirizzo / Link / Contatti. Copyright in fondo -->
-    </footer>
+        <div class="col-12 col-md-4">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="card-icon mb-3">🪑</div>
+              <h5 class="card-title fw-bold">Interior design</h5>
+              <p class="card-text text-muted">
+                Allestimento d'interno per case e uffici, con materiali selezionati e arredo su misura.
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/script.js"></script>
-  </body>
+        <div class="col-12 col-md-4">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="card-icon mb-3">🧱</div>
+              <h5 class="card-title fw-bold">Ristrutturazioni</h5>
+              <p class="card-text text-muted">
+                Riqualificazione di spazi esistenti, gestione dei lavori e coordinamento con le imprese.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti" class="bg-light">
+    <!-- Form contatti Bootstrap, larghezza limitata e centrata -->
+    <div class="services-title d-flex align-items-center justify-content-center flex-column text-center mt-5 mb-5">
+      <h3 class="fw-bold mt-5">Contattaci</h3>
+      <p class="text-muted">Compila il form, ti rispondiamo entro 48 ore.</p>
+    </div>
+    <div class="container col-12 col-md-8 col-lg-6 mx-auto w-80">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputName1" class="form-label">Nome</label>
+          <input type="name" class="form-control" id="exampleInputName1" aria-describedby="nameHelp">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputName1" class="form-label">Tipo di progetto</label>
+            <select class="form-select" aria-label="Default select example">
+              <option value="1">Residenziale</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="floatingTextarea">Messaggio</label>
+            <textarea class="form-control" id="floatingTextarea"></textarea>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary mx-auto d-block w-100">Invia</button>
+          </div>
+        </div>
+      </form>
+  </section>
+
+  <footer>
+    <!-- 3 colonne: Atelier+indirizzo / Link / Contatti. Copyright in fondo -->
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+</body>
+
 </html>

@@ -4,7 +4,24 @@
 // === Variabili (definisci $brand-primary, $brand-secondary, $radius-base, ecc.) ===
 $brand-primary: hsl(20, 20%, 15%);
 $brand-secondary: hsl(20, 30%, 35%);
+$radius-base: 0.25rem;
+$shadow-card: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.219);
+$shadow-card-hover: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.646);
 // === Mixin (definisci almeno @mixin card-elevata o equivalente) ===
+@mixin card-elevata {
+  box-shadow: $shadow-card;
+  transition:
+    box-shadow 200ms ease,
+    transform 200ms ease;
+  &:hover {
+    box-shadow: $shadow-card-hover;
+    transform: translateY(-3px);
+  }
+}
+
+.card {
+  @include card-elevata;
+}
 
 // === Override Bootstrap (sovrascrivi .btn-primary, .bg-primary, .text-primary col tuo colore brand) ===
 
@@ -13,6 +30,7 @@ $brand-secondary: hsl(20, 30%, 35%);
 header {
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 .bg-primary {
@@ -21,32 +39,41 @@ header {
 }
 
 .min-height-80vh {
-    min-height: 80vh;
+  min-height: 80vh;
 }
 
-.hero-h1, .lead {
-    color: hsl(40, 30%, 90%);
+.hero-h1,
+.lead {
+  color: hsl(40, 30%, 90%);
 }
 
 #studio {
-    background-color: $brand-secondary;
+  background-color: $brand-secondary;
 }
 
 .btn-primary {
-    background-color: $brand-secondary;
-    border-color: $brand-secondary;
+  background-color: $brand-secondary;
+  border-color: $brand-secondary;
 }
 .btn-primary:hover {
-    background-color: hsl(20, 30%, 25%);
-    border-color: hsl(20, 30%, 25%);
+  background-color: hsl(20, 30%, 25%);
+  border-color: hsl(20, 30%, 25%);
 }
 
-.btn-primary:focus, .btn-primary:active, .btn-primary.active {
-    background-color: hsl(20, 30%, 25%);
-    border-color: hsl(20, 30%, 25%);
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: hsl(20, 30%, 25%);
+  border-color: hsl(20, 30%, 25%);
 }
 
-.btn-primary.disabled, .btn-primary:disabled {
-    background-color: $brand-secondary;
-    border-color: $brand-secondary;
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: $brand-secondary;
+  border-color: $brand-secondary;
+}
+
+.card-icon {
+  font-size: 3rem;
+  line-height: 1;
 }
