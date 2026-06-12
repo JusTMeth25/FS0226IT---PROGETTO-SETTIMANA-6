@@ -78,6 +78,17 @@ section {
   line-height: 1;
 }
 
+/* Sezione lavori*/
+.work-card {
+  height: 100%;
+}
+
+.work-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
 .footer {
   background-color: v.$brand-primary;
   color: hsl(40, 30%, 90%);
