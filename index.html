@@ -19,13 +19,13 @@
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav-menu"><span
             class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="nav-menu">
-          <ul class="navbar-nav ms-auto">
+          <button id="toggle-tema" type="button" class="btn btn-outline-light ms-md-auto me-md-3 mt-2 mt-md-0">Tema
+              scuro</button>
+          <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="#studio">Studio</a></li>
             <li class="nav-item"><a class="nav-link" href="#servizi">Servizi</a></li>
             <li class="nav-item"><a class="nav-link" href="#lavori">Lavori</a></li>
             <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
-            <button id="toggle-tema" type="button" class="btn btn-outline-light ms-md-2 mt-2 mt-md-0">Tema
-              scuro</button>
         </div>
       </div>
     </nav>
@@ -94,83 +94,27 @@
   </section>
 
   <section id="lavori">
-    <div class="services-title d-flex align-items-center justify-content-center flex-column text-center mt-5 mb-5">
+  <div class="container">
+    <div class="services-title d-flex align-items-center justify-content-center flex-column text-center mt-5 mb-4">
       <h3 class="fw-bold">I nostri lavori</h3>
       <p class="text-muted">I nostri recenti lavori, massima attenzione alla qualità.</p>
+      <p class="text-muted m-0 mostrati">
+        Mostrati: <span id="contatore-lavori"></span> su <span id="totale-lavori"></span>
+      </p>
     </div>
-    <div class="container">
-      <div class="row g-4 justify-content-center mb-3">
-        <div class="col-12 col-md-4">
-          <div class="card work-card h-100 text-center">
 
-            <img src="/assets/img/villapiscina.jpg" class="card-img-top work-card-img" alt="villa con piscina">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Rinascita di un rustico moderno</h5>
-              <p class="card-text text-muted">
-                Progettazione ex-novo di una villa unifamiliare contemporanea su due livelli.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card work-card h-100 text-center">
-            <img src="/assets/img/ristrutturazione.jpg" class="card-img-top work-card-img"
-              alt="ristrutturazione di un appartamento">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Ristrutturazioni</h5>
-              <p class="card-text text-muted">
-                Riqualificazione di spazi esistenti, gestione dei lavori e coordinamento con le imprese.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card work-card h-100 text-center">
-            <img src="/assets/img/attico.jpg" class="card-img-top work-card-img" alt="attico moderno">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Attico Minimalista e Funzionale</h5>
-              <p class="card-text text-muted">
-                Ottimizzazione degli spazi con arredi integrati.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card work-card h-100 text-center">
-            <img src="/assets/img/loft.jpg" class="card-img-top work-card-img" alt="Loft">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Loft</h5>
-              <p class="card-text text-muted">
-                Trasformazione di una ex officina meccanica.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card work-card h-100 text-center">
-            <img src="/assets/img/armonia.jpg" class="card-img-top work-card-img" alt="Appartamento Armonia Naturale">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Appartamento Armonia Naturale</h5>
-              <p class="card-text text-muted">
-                Fusione tra minimalismo scandinavo e stile europeo.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card work-card h-100 text-center">
-            <img src="/assets/img/energia.jpg" class="card-img-top work-card-img" alt="Casa con pannelli solari">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Bifamiliare a Energia Quasi Zero</h5>
-              <p class="card-text text-muted">
-                Architettura moderna a impatto ambientale minimo.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="filtri-lavori" class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+      <button type="button" class="btn btn-outline-primary active" data-categoria="tutti">Tutti</button>
+      <button type="button" class="btn btn-outline-primary" data-categoria="residenziale">Residenziale</button>
+      <button type="button" class="btn btn-outline-primary" data-categoria="interior">Interior Design</button>
+      <button type="button" class="btn btn-outline-primary" data-categoria="ristrutturazioni">Ristrutturazioni</button>
     </div>
-  </section>
+
+    <div id="contenitore-lavori" class="row g-4 justify-content-center mb-3">
+      <!-- Card generate da JavaScript -->
+    </div>
+  </div>
+</section>
 
   <section id="contatti" class="bg-light">
     <!-- Form contatti Bootstrap, larghezza limitata e centrata -->
