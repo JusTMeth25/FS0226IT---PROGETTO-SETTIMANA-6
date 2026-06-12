@@ -64,6 +64,12 @@ const modaleLavoroDescrizione = document.getElementById(
 );
 const modaleLavoro = new bootstrap.Modal(modaleLavoroElemento);
 
+const formContatti = document.getElementById("form-contatti");
+const inputEmail = document.getElementById("exampleInputEmail");
+const textareaMessaggio = document.getElementById("floatingTextarea");
+const alertForm = document.getElementById("alert-form");
+
+
 function aggiungiTesto(elemento, testo) {
   const nodoTesto = document.createTextNode(testo);
   elemento.append(nodoTesto);
@@ -237,5 +243,40 @@ contenitoreLavori.addEventListener("keydown", function (evento) {
 
   apriModaleLavoro(lavoro);
 });
+
+function mostraAlert(tipo, messaggio) {
+  alertForm.classList.remove("d-none", "alert-danger", "alert-success");
+  alertForm.classList.add(tipo);
+  alertForm.replaceChildren(document.createTextNode(messaggio));
+}
+
+function validaEmail(email) {
+  return email.includes("@");
+}
+
+function validaMessaggio(messaggio) {
+  return messaggio.trim().length >= 20;
+}
+
+formContatti.addEventListener("submit", function (evento) {
+  evento.preventDefault();
+
+  const email = inputEmail.value.trim();
+  const messaggio = textareaMessaggio.value.trim();
+
+  if (!validaEmail(email)) {
+    mostraAlert("alert-danger", "Inserisci un indirizzo email valido: deve contenere @.");
+    return;
+  }
+
+  if (!validaMessaggio(messaggio)) {
+    mostraAlert("alert-danger", "Il messaggio deve contenere almeno 20 caratteri.");
+    return;
+  }
+
+  mostraAlert("alert-success", "Messaggio inviato correttamente! Ti risponderemo entro 48 ore.");
+  formContatti.reset();
+});
+
 
 renderLavori(lavori);
