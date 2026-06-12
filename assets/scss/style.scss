@@ -1,20 +1,16 @@
 // Atelier — Week Project Settimana VI
 // Definisci qui le tue variabili, mixin, override Bootstrap.
-
+@use "partials/variables" as v;
 // === Variabili (definisci $brand-primary, $brand-secondary, $radius-base, ecc.) ===
-$brand-primary: hsl(20, 20%, 15%);
-$brand-secondary: hsl(20, 30%, 35%);
-$radius-base: 0.25rem;
-$shadow-card: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.123);
-$shadow-card-hover: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.199);
+
 // === Mixin (definisci almeno @mixin card-elevata o equivalente) ===
 @mixin card-elevata {
-  box-shadow: $shadow-card;
+  box-shadow: v.$shadow-card;
   transition:
     box-shadow 200ms ease,
     transform 200ms ease;
   &:hover {
-    box-shadow: $shadow-card-hover;
+    box-shadow: v.$shadow-card-hover;
     transform: translateY(-3px);
   }
 }
@@ -25,8 +21,13 @@ $shadow-card-hover: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.199);
 
 // === Override Bootstrap (sovrascrivi .btn-primary, .bg-primary, .text-primary col tuo colore brand) ===
 .bg-primary {
-  background-color: $brand-primary !important;
-  border-color: $brand-primary !important;
+  background-color: v.$brand-primary !important;
+  border-color: v.$brand-primary !important;
+}
+
+.btn-primary {
+  background-color: v.$brand-secondary;
+  border-color: v.$brand-secondary;
 }
 
 // === Stili custom delle sezioni (header sticky, hero, servizi, contatti, footer) ===
@@ -35,6 +36,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
 
 .min-height-80vh {
@@ -47,13 +52,9 @@ header {
 }
 
 #studio {
-  background-color: $brand-secondary;
+  background-color: v.$brand-secondary;
 }
 
-.btn-primary {
-  background-color: $brand-secondary;
-  border-color: $brand-secondary;
-}
 .btn-primary:hover {
   background-color: hsl(20, 30%, 25%);
   border-color: hsl(20, 30%, 25%);
@@ -68,8 +69,8 @@ header {
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-  background-color: $brand-secondary;
-  border-color: $brand-secondary;
+  background-color: v.$brand-secondary;
+  border-color: v.$brand-secondary;
 }
 
 .card-icon {
@@ -78,23 +79,14 @@ header {
 }
 
 .footer {
-  background-color: $brand-primary;
+  background-color: v.$brand-primary;
   color: hsl(40, 30%, 90%);
 }
-
-// .footer h5 {
-//   color: hsl(40, 30%, 90%);
-// }
-
-// .footer p {
-//     color: hsl(40, 30%, 90%);
-// }
-
 .footer a {
   color: hsl(40, 30%, 90%);
 }
 
 .copyright {
-    background-color: $brand-primary;
-    color: hsl(40, 30%, 90%);
+  background-color: v.$brand-primary;
+  color: hsl(40, 30%, 90%);
 }

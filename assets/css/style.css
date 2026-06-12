@@ -12,10 +12,19 @@
   border-color: hsl(20, 20%, 15%) !important;
 }
 
+.btn-primary {
+  background-color: hsl(20, 30%, 35%);
+  border-color: hsl(20, 30%, 35%);
+}
+
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
 
 .min-height-80vh {
@@ -29,11 +38,6 @@ header {
 
 #studio {
   background-color: hsl(20, 30%, 35%);
-}
-
-.btn-primary {
-  background-color: hsl(20, 30%, 35%);
-  border-color: hsl(20, 30%, 35%);
 }
 
 .btn-primary:hover {
