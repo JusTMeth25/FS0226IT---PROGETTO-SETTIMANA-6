@@ -1,17 +1,52 @@
 // Atelier — Week Project Settimana VI
 // Definisci qui le tue variabili, mixin, override Bootstrap.
 
-
 // === Variabili (definisci $brand-primary, $brand-secondary, $radius-base, ecc.) ===
-
-
-
+$brand-primary: hsl(20, 20%, 15%);
+$brand-secondary: hsl(20, 30%, 35%);
 // === Mixin (definisci almeno @mixin card-elevata o equivalente) ===
-
-
 
 // === Override Bootstrap (sovrascrivi .btn-primary, .bg-primary, .text-primary col tuo colore brand) ===
 
-
-
 // === Stili custom delle sezioni (header sticky, hero, servizi, contatti, footer) ===
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+.bg-primary {
+  background-color: $brand-primary !important;
+  border-color: $brand-primary !important;
+}
+
+.min-height-80vh {
+    min-height: 80vh;
+}
+
+.hero-h1, .lead {
+    color: hsl(40, 30%, 90%);
+}
+
+#studio {
+    background-color: $brand-secondary;
+}
+
+.btn-primary {
+    background-color: $brand-secondary;
+    border-color: $brand-secondary;
+}
+.btn-primary:hover {
+    background-color: hsl(20, 30%, 25%);
+    border-color: hsl(20, 30%, 25%);
+}
+
+.btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    background-color: hsl(20, 30%, 25%);
+    border-color: hsl(20, 30%, 25%);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: $brand-secondary;
+    border-color: $brand-secondary;
+}

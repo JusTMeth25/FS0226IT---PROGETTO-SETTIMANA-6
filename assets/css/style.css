@@ -1,3 +1,43 @@
+header {
+  position: sticky;
+  top: 0;
+}
 
+.bg-primary {
+  background-color: hsl(20, 20%, 15%) !important;
+  border-color: hsl(20, 20%, 15%) !important;
+}
+
+.min-height-80vh {
+  min-height: 80vh;
+}
+
+.hero-h1, .lead {
+  color: hsl(40, 30%, 90%);
+}
+
+#studio {
+  background-color: hsl(20, 30%, 35%);
+}
+
+.btn-primary {
+  background-color: hsl(20, 30%, 35%);
+  border-color: hsl(20, 30%, 35%);
+}
+
+.btn-primary:hover {
+  background-color: hsl(20, 30%, 25%);
+  border-color: hsl(20, 30%, 25%);
+}
+
+.btn-primary:focus, .btn-primary:active, .btn-primary.active {
+  background-color: hsl(20, 30%, 25%);
+  border-color: hsl(20, 30%, 25%);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: hsl(20, 30%, 35%);
+  border-color: hsl(20, 30%, 35%);
+}
 
 /*# sourceMappingURL=style.css.map */
