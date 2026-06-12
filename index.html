@@ -94,7 +94,7 @@
 
   <section id="contatti" class="bg-light">
     <!-- Form contatti Bootstrap, larghezza limitata e centrata -->
-    <div class="services-title d-flex align-items-center justify-content-center flex-column text-center mt-5 mb-5">
+    <div class="services-title d-flex align-items-center justify-content-center flex-column text-center mt-5 mb-2">
       <h3 class="fw-bold mt-5">Contattaci</h3>
       <p class="text-muted">Compila il form, ti rispondiamo entro 48 ore.</p>
     </div>
@@ -126,28 +126,29 @@
       </form>
   </section>
 
-  <footer>
+  <footer class="footer bg-primary text-light py-4">
     <!-- 3 colonne: Atelier+indirizzo / Link / Contatti. Copyright in fondo -->
-    <div class="footer-container d-flex">
-      <div class="colonne col-12 col-md-4">
+    <div class="container">
+      <div class="row gy-4">
+      <div class="col-12 col-md-4">
         <h5 class="fw-bold">Atelier</h5>
         <p class="m-0">Studio di architettura</p>
         <p class="m-0">Via dei Pioppi 12, Milano</p>
       </div>
-      <div class="colonne col-12 col-md-4">
+      <div class="col-12 col-md-4 d-flex flex-column">
         <h5 class="fw-bold">Link</h5>
-        <a href="#studio" class="text-decoration-none d-flex flex-column">Studio</a>
-        <a href="#servizi" class="text-decoration-none d-flex flex-column">Servizi</a>
-        <a href="#contatti" class="text-decoration-none d-flex flex-column">Contatti</a>
+        <a href="#studio" class="flex-column text-decoration-none">Studio</a>
+        <a href="#servizi" class="flex-column text-decoration-none">Servizi</a>
+        <a href="#contatti" class="flex-column text-decoration-none">Contatti</a>
       </div>
-      <div class="colonne col-12 col-md-4">
+      <div class="col-12 col-md-4">
         <h5 class="fw-bold">Contatti</h5>
         <p class="m-0">info@atelier.example</p>
         <p class="m-0">+39 02 0000 1111</p>
       </div>
-      <hr />
+      <hr class="border-light opacity-50 my-4"/>
     </div>
-    <p class="copyright mb-0 d-flex justify-content-center">&copy; 2026 Atelier - tutti i diritti riservati</p>
+    <p class="copyright mb-0 text-center">&copy; 2026 Atelier - tutti i diritti riservati</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

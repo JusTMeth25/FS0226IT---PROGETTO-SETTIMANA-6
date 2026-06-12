@@ -77,27 +77,24 @@ header {
   line-height: 1;
 }
 
-.footer-container {
+.footer {
   background-color: $brand-primary;
-}
-
-.footer-container h5 {
   color: hsl(40, 30%, 90%);
 }
 
-.footer-container p {
-    color: hsl(40, 30%, 90%);
-}
+// .footer h5 {
+//   color: hsl(40, 30%, 90%);
+// }
 
-.footer-container a {
+// .footer p {
+//     color: hsl(40, 30%, 90%);
+// }
+
+.footer a {
   color: hsl(40, 30%, 90%);
 }
 
 .copyright {
     background-color: $brand-primary;
-    color: hsl(40, 30%, 90%);
-}
-
-hr {
     color: hsl(40, 30%, 90%);
 }
