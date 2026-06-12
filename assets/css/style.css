@@ -1,21 +1,21 @@
 .card {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.219);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.123);
   transition: box-shadow 200ms ease, transform 200ms ease;
 }
 .card:hover {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.646);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.199);
   transform: translateY(-3px);
+}
+
+.bg-primary {
+  background-color: hsl(20, 20%, 15%) !important;
+  border-color: hsl(20, 20%, 15%) !important;
 }
 
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-.bg-primary {
-  background-color: hsl(20, 20%, 15%) !important;
-  border-color: hsl(20, 20%, 15%) !important;
 }
 
 .min-height-80vh {
@@ -57,6 +57,31 @@ header {
 .card-icon {
   font-size: 3rem;
   line-height: 1;
+}
+
+.footer-container {
+  background-color: hsl(20, 20%, 15%);
+}
+
+.footer-container h5 {
+  color: hsl(40, 30%, 90%);
+}
+
+.footer-container p {
+  color: hsl(40, 30%, 90%);
+}
+
+.footer-container a {
+  color: hsl(40, 30%, 90%);
+}
+
+.copyright {
+  background-color: hsl(20, 20%, 15%);
+  color: hsl(40, 30%, 90%);
+}
+
+hr {
+  color: hsl(40, 30%, 90%);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,8 +5,8 @@
 $brand-primary: hsl(20, 20%, 15%);
 $brand-secondary: hsl(20, 30%, 35%);
 $radius-base: 0.25rem;
-$shadow-card: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.219);
-$shadow-card-hover: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.646);
+$shadow-card: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.123);
+$shadow-card-hover: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.199);
 // === Mixin (definisci almeno @mixin card-elevata o equivalente) ===
 @mixin card-elevata {
   box-shadow: $shadow-card;
@@ -24,6 +24,10 @@ $shadow-card-hover: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.646);
 }
 
 // === Override Bootstrap (sovrascrivi .btn-primary, .bg-primary, .text-primary col tuo colore brand) ===
+.bg-primary {
+  background-color: $brand-primary !important;
+  border-color: $brand-primary !important;
+}
 
 // === Stili custom delle sezioni (header sticky, hero, servizi, contatti, footer) ===
 
@@ -31,11 +35,6 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-.bg-primary {
-  background-color: $brand-primary !important;
-  border-color: $brand-primary !important;
 }
 
 .min-height-80vh {
@@ -76,4 +75,29 @@ header {
 .card-icon {
   font-size: 3rem;
   line-height: 1;
+}
+
+.footer-container {
+  background-color: $brand-primary;
+}
+
+.footer-container h5 {
+  color: hsl(40, 30%, 90%);
+}
+
+.footer-container p {
+    color: hsl(40, 30%, 90%);
+}
+
+.footer-container a {
+  color: hsl(40, 30%, 90%);
+}
+
+.copyright {
+    background-color: $brand-primary;
+    color: hsl(40, 30%, 90%);
+}
+
+hr {
+    color: hsl(40, 30%, 90%);
 }
